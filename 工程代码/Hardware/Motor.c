@@ -1,10 +1,10 @@
 #include "stm32f10x.h"                  // Device header
 #include "PWM.h"
 /*电机驱动*/
-#define left1 GPIO_Pin_4
-#define left2 GPIO_Pin_5
-#define right1 GPIO_Pin_6
-#define right2 GPIO_Pin_7
+#define left1 GPIO_Pin_5
+#define left2 GPIO_Pin_4
+#define right1 GPIO_Pin_7
+#define right2 GPIO_Pin_6
 
 /**
   * 函    数：直流电机初始化
