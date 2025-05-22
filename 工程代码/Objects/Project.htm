@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\Project.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\Project.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sat May 17 20:09:37 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Thu May 22 15:53:39 2025
 <BR><P>
 <H3>Maximum Stack Usage =        304 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -442,9 +442,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay_us
 </UL>
 <BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[32]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART1_IRQHandler
-<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ObstacleAvoidance
 <LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UltraSound_Measure
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ObstacleAvoidance
 </UL>
 
 <P><STRONG><a name="[54]"></a>Delay_us</STRONG> (Thumb, 46 bytes, Stack size 0 bytes, delay.o(i.Delay_us))
@@ -559,7 +558,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Serial_Init
 </UL>
 
-<P><STRONG><a name="[5e]"></a>ObstacleAvoidance</STRONG> (Thumb, 188 bytes, Stack size 32 bytes, main.o(i.ObstacleAvoidance))
+<P><STRONG><a name="[5e]"></a>ObstacleAvoidance</STRONG> (Thumb, 188 bytes, Stack size 32 bytes, ultrasound.o(i.ObstacleAvoidance))
 <BR><BR>[Stack]<UL><LI>Max Depth = 304<LI>Call Chain = ObstacleAvoidance &rArr; map &rArr; pow &rArr; sqrt &rArr; _dsqrt &rArr; __fpl_dnaninf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfrcmple
@@ -695,7 +694,6 @@ Global Symbols
 <LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PWM_SetAngle3
 </UL>
 <BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[32]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART1_IRQHandler
 <LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ObstacleAvoidance
 </UL>
 
@@ -775,12 +773,10 @@ Global Symbols
 <LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ObstacleAvoidance
 </UL>
 
-<P><STRONG><a name="[32]"></a>USART1_IRQHandler</STRONG> (Thumb, 192 bytes, Stack size 8 bytes, main.o(i.USART1_IRQHandler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = USART1_IRQHandler &rArr; Servo_SetAngle &rArr; __aeabi_fmul
+<P><STRONG><a name="[32]"></a>USART1_IRQHandler</STRONG> (Thumb, 144 bytes, Stack size 8 bytes, main.o(i.USART1_IRQHandler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = USART1_IRQHandler &rArr; USART_GetITStatus
 </UL>
-<BR>[Calls]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo_SetAngle
-<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay_ms
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ReceiveData
+<BR>[Calls]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ReceiveData
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetITStatus
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md.o(RESET)
@@ -813,7 +809,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[32]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART1_IRQHandler
 </UL>
 
-<P><STRONG><a name="[82]"></a>UltraSound_Init</STRONG> (Thumb, 118 bytes, Stack size 24 bytes, ultrasound.o(i.UltraSound_Init))
+<P><STRONG><a name="[82]"></a>UltraSound_Init</STRONG> (Thumb, 112 bytes, Stack size 24 bytes, ultrasound.o(i.UltraSound_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = UltraSound_Init &rArr; GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
@@ -825,8 +821,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[61]"></a>UltraSound_Measure</STRONG> (Thumb, 174 bytes, Stack size 56 bytes, ultrasound.o(i.UltraSound_Measure))
-<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = UltraSound_Measure &rArr; __aeabi_dmul
+<P><STRONG><a name="[61]"></a>UltraSound_Measure</STRONG> (Thumb, 148 bytes, Stack size 40 bytes, ultrasound.o(i.UltraSound_Measure))
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = UltraSound_Measure &rArr; __aeabi_dmul
 </UL>
 <BR>[Calls]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
 <LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetBits
@@ -897,15 +893,15 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pow
 </UL>
 
-<P><STRONG><a name="[44]"></a>main</STRONG> (Thumb, 404 bytes, Stack size 0 bytes, main.o(i.main))
+<P><STRONG><a name="[44]"></a>main</STRONG> (Thumb, 286 bytes, Stack size 0 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 304<LI>Call Chain = main &rArr; ObstacleAvoidance &rArr; map &rArr; pow &rArr; sqrt &rArr; _dsqrt &rArr; __fpl_dnaninf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ReadInputDataBit
 <LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfcmple
-<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ObstacleAvoidance
 <LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Track_Init
 <LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UltraSound_Measure
 <LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UltraSound_Init
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ObstacleAvoidance
 <LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo_SetAngle
 <LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo_Init
 <LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Serial_Init
@@ -922,7 +918,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
 
-<P><STRONG><a name="[66]"></a>map</STRONG> (Thumb, 170 bytes, Stack size 80 bytes, main.o(i.map))
+<P><STRONG><a name="[66]"></a>map</STRONG> (Thumb, 170 bytes, Stack size 80 bytes, ultrasound.o(i.map))
 <BR><BR>[Stack]<UL><LI>Max Depth = 272<LI>Call Chain = map &rArr; pow &rArr; sqrt &rArr; _dsqrt &rArr; __fpl_dnaninf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pow

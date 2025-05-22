@@ -2,6 +2,12 @@
 
 /*循迹模块*/
 
+#define rt GPIO_Pin_5  //最右
+#define rm GPIO_Pin_6  //中右
+#define lm GPIO_Pin_7  //中左
+#define lt GPIO_Pin_8  //最左
+
+
 void Track_Init(void){
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);		
 	
@@ -12,5 +18,6 @@ void Track_Init(void){
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
 	GPIO_Init(GPIOB, &GPIO_InitStructure);
 }
+
 
 

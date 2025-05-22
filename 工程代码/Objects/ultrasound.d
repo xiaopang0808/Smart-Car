@@ -29,3 +29,7 @@
 .\objects\ultrasound.o: .\Library\stm32f10x_wwdg.h
 .\objects\ultrasound.o: .\Library\misc.h
 .\objects\ultrasound.o: .\System\Delay.h
+.\objects\ultrasound.o: Hardware\Motor.h
+.\objects\ultrasound.o: Hardware\Servo.h
+.\objects\ultrasound.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+.\objects\ultrasound.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
