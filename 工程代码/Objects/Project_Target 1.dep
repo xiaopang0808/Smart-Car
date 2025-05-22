@@ -839,7 +839,7 @@ I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
 I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
 I (.\Library\misc.h)(0x4D783BB4)
 F (.\Hardware\PWM.h)(0x622B191A)()
-F (.\Hardware\Motor.c)(0x682EC1E3)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Start -I .\Library -I .\User -I .\System -I .\Hardware-ID:\APP\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="534" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\motor.o --omf_browse .\objects\motor.crf --depend .\objects\motor.d)
+F (.\Hardware\Motor.c)(0x682F26EA)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Start -I .\Library -I .\User -I .\System -I .\Hardware-ID:\APP\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="534" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\motor.o --omf_browse .\objects\motor.crf --depend .\objects\motor.d)
 I (.\Start\stm32f10x.h)(0x4D783CB4)
 I (.\Start\core_cm3.h)(0x4D523B58)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
@@ -869,7 +869,7 @@ I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
 I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
 I (.\Library\misc.h)(0x4D783BB4)
 I (Hardware\PWM.h)(0x622B191A)
-F (.\Hardware\Motor.h)(0x68272E72)()
+F (.\Hardware\Motor.h)(0x682F26EA)()
 F (.\Hardware\Serial.c)(0x6824C1D7)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Start -I .\Library -I .\User -I .\System -I .\Hardware-ID:\APP\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="534" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\serial.o --omf_browse .\objects\serial.crf --depend .\objects\serial.d)
 I (.\Start\stm32f10x.h)(0x4D783CB4)
 I (.\Start\core_cm3.h)(0x4D523B58)
@@ -930,7 +930,7 @@ I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
 I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
 I (.\Library\misc.h)(0x4D783BB4)
 F (.\Hardware\Servo.h)(0x6823E879)()
-F (.\Hardware\UltraSound.c)(0x682ED800)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Start -I .\Library -I .\User -I .\System -I .\Hardware-ID:\APP\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="534" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\ultrasound.o --omf_browse .\objects\ultrasound.crf --depend .\objects\ultrasound.d)
+F (.\Hardware\UltraSound.c)(0x682F26FE)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Start -I .\Library -I .\User -I .\System -I .\Hardware-ID:\APP\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="534" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\ultrasound.o --omf_browse .\objects\ultrasound.crf --depend .\objects\ultrasound.d)
 I (.\Start\stm32f10x.h)(0x4D783CB4)
 I (.\Start\core_cm3.h)(0x4D523B58)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
@@ -960,7 +960,7 @@ I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
 I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
 I (.\Library\misc.h)(0x4D783BB4)
 I (.\System\Delay.h)(0x6130920E)
-I (Hardware\Motor.h)(0x68272E72)
+I (Hardware\Motor.h)(0x682F26EA)
 I (Hardware\Servo.h)(0x6823E879)
 I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
@@ -995,7 +995,7 @@ I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
 I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
 I (.\Library\misc.h)(0x4D783BB4)
 F (.\Hardware\Track.h)(0x682ED38F)()
-F (.\User\main.c)(0x682ED800)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Start -I .\Library -I .\User -I .\System -I .\Hardware-ID:\APP\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="534" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\User\main.c)(0x682F3B79)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Start -I .\Library -I .\User -I .\System -I .\Hardware-ID:\APP\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="534" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (.\Start\stm32f10x.h)(0x4D783CB4)
 I (.\Start\core_cm3.h)(0x4D523B58)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
@@ -1025,7 +1025,7 @@ I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
 I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
 I (.\Library\misc.h)(0x4D783BB4)
 I (.\System\Delay.h)(0x6130920E)
-I (.\Hardware\Motor.h)(0x68272E72)
+I (.\Hardware\Motor.h)(0x682F26EA)
 I (.\Hardware\Servo.h)(0x6823E879)
 I (.\Hardware\Serial.h)(0x6823E3F2)
 I (.\Hardware\UltraSound.h)(0x682EC7F6)

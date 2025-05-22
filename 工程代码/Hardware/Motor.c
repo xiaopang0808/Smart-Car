@@ -1,11 +1,12 @@
 #include "stm32f10x.h"                  // Device header
 #include "PWM.h"
 /*电机驱动*/
-#define left1 GPIO_Pin_5
-#define left2 GPIO_Pin_4
-#define right1 GPIO_Pin_7
-#define right2 GPIO_Pin_6
+#define left1 GPIO_Pin_7
+#define left2 GPIO_Pin_6
+#define right1 GPIO_Pin_5
+#define right2 GPIO_Pin_4
 
+int8_t Car_Speed;
 
 /**
   * 函    数：直流电机初始化
@@ -70,21 +71,21 @@ void Motor_SetRightSpeed(int8_t Speed)
 }
 
 void MoveForward(void){
-    Motor_SetLeftSpeed(100);
-    Motor_SetRightSpeed(100);
+    Motor_SetLeftSpeed(Car_Speed);
+    Motor_SetRightSpeed(Car_Speed);
 }
 
 void MoveBackward(void){
-    Motor_SetLeftSpeed(-100);
-    Motor_SetRightSpeed(-100);
+    Motor_SetLeftSpeed(-Car_Speed);
+    Motor_SetRightSpeed(-Car_Speed);
 }
 
 void Turn_Left(void){
-    Motor_SetLeftSpeed(100);   
+    Motor_SetRightSpeed(Car_Speed);   
 } 
 
 void Turn_Right(void){
-    Motor_SetRightSpeed(100); 
+    Motor_SetLeftSpeed(Car_Speed); 
 }
 
 void Car_Stop(void){
@@ -93,11 +94,15 @@ void Car_Stop(void){
 }
 
 void Self_Right(void){
-    Motor_SetLeftSpeed(-100);
-    Motor_SetRightSpeed(100); 
+    Motor_SetLeftSpeed(Car_Speed);
+    Motor_SetRightSpeed(-Car_Speed); 
 }
 
 void Self_Left(void){
-    Motor_SetLeftSpeed(100);
-    Motor_SetRightSpeed(-100); 
+    Motor_SetLeftSpeed(-Car_Speed);
+    Motor_SetRightSpeed(Car_Speed); 
+}
+
+void Set_Car_Speed(int8_t speed){
+    Car_Speed=speed;
 }

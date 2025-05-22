@@ -11,6 +11,7 @@ void Turn_Right(void);
 void Car_Stop(void);
 void Self_Right(void);
 void Self_Left(void);
+void Set_Car_Speed(int8_t speed);
 
 
 

@@ -20,7 +20,7 @@ int main(void)
     UltraSound_Init();
     Track_Init();
     //0x10--手动模式   0x20--自动避障模式 0x30--循迹模式
-    mode=0x40;
+    mode=0x30;
     /*  运行状态
         0x11--前进
         0x12--后退
@@ -36,6 +36,7 @@ int main(void)
 	{
         //超声波避障模式
         if(mode==0x20){
+            Set_Car_Speed(100);
             float distance = UltraSound_Measure();
             if (distance < MIN_DISTANCE) {
                 Car_Stop();
@@ -47,27 +48,42 @@ int main(void)
         }
         //循迹模式
         else if(mode==0x30){
-            Car_Stop();
+            Set_Car_Speed(100);
             //循迹 检测到黑线输出高电平
             uint8_t rt=GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_5);
             uint8_t rm=GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_6);
             uint8_t lm=GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_7);
             uint8_t lt=GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_8);
-            if(rt==rm && rm==lm && lm==lt){
-                MoveBackward();    
+            if(lt==0 && rt==1){
+                Car_Stop();
+                while(rm==0 && lm==0){
+                    rm=GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_6);
+                    lm=GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_7);
+                    Self_Right(); 
+                }
             }
-            else if(lt==1){
-                Turn_Right();
-            }
-            else if(rt){
-                Turn_Left();
+            else if(rt==0 && lt==1){
+                Car_Stop();
+                
+                while(rm==0 && lm==0){
+                    rm=GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_6);
+                    lm=GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_7);
+                    Self_Left();
+                }
             }
             else{
-                MoveForward();
-            }
-            Delay_ms(400);
-            
-            
+                if(rm==0 && lm==1){
+                    Car_Stop();
+                    Turn_Left();
+                }
+                else if(lm==0 && rm==1){
+                    Car_Stop();
+                    Turn_Right(); 
+                }
+                else{
+                    MoveForward();
+                } 
+            }        
         }
         //手动模式
         else{
@@ -80,6 +96,7 @@ int main(void)
         0x16--原地左转
         0x17--停止
         */
+            Set_Car_Speed(100);
             if(running_statu==0x11){
                 MoveForward();
             }
