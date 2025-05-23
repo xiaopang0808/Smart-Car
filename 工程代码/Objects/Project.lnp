@@ -26,7 +26,6 @@
 ".\objects\stm32f10x_usart.o"
 ".\objects\stm32f10x_wwdg.o"
 ".\objects\delay.o"
-".\objects\led.o"
 ".\objects\pwm.o"
 ".\objects\motor.o"
 ".\objects\serial.o"

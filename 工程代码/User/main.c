@@ -19,8 +19,10 @@ int main(void)
     Serial_Init();
     UltraSound_Init();
     Track_Init();
-    //0x10--手动模式   0x20--自动避障模式 0x30--循迹模式
-    mode=0x30;
+//    0x10--手动模式  
+//    0x20--自动避障模式
+//    0x30--循迹模式
+    mode=0x10;
     /*  运行状态
         0x11--前进
         0x12--后退
@@ -38,7 +40,7 @@ int main(void)
         if(mode==0x20){
             Set_Car_Speed(100);
             float distance = UltraSound_Measure();
-            if (distance < MIN_DISTANCE) {
+            if (distance < MIN_DISTANCE){
                 Car_Stop();
                 ObstacleAvoidance();
             } else {
