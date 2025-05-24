@@ -106,10 +106,10 @@ void MoveBackward(void)
   * @param  无
   * @retval 无
   * @note   仅右电机工作，适合差速转向场景
-  * @warning 需配合停止/反向操作实现完整转向
   */
 void Turn_Left(void)
 {
+    Motor_SetLeftSpeed(0);
     Motor_SetRightSpeed(Car_Speed);        // 右电机驱动
 }
 
@@ -121,6 +121,7 @@ void Turn_Left(void)
   */
 void Turn_Right(void)
 {
+    Motor_SetRightSpeed(0);
     Motor_SetLeftSpeed(Car_Speed);         // 左电机驱动
 }
 
@@ -169,3 +170,6 @@ void Set_Car_Speed(int8_t speed)
 {
     Car_Speed = speed;
 }
+
+
+
