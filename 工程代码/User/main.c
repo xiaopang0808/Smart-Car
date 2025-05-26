@@ -9,8 +9,8 @@
 #define waitTime 300
 #define Delay_time 100
 
-uint16_t mode;
-uint8_t running_statu;
+volatile uint16_t mode;
+volatile uint8_t running_statu;
 
 // 全局状态标记（需在外部定义）
 enum TrackState { NORMAL, SHARP_TURN }; 
@@ -129,25 +129,59 @@ int main(void)
             Set_Car_Speed(100);
             
             TrackingProcess();
+  
             
-            //循迹 检测到黑线输出高电平
-//            uint8_t rt=GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_5);
-//            uint8_t rm=GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_6);
-//            uint8_t lm=GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_7);
-//            uint8_t lt=GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_8);
-//                
-//            
-//            if(lt==lm && lm==rm && rm==rt){
-//                if(lt==1){
-//                    Car_Stop();
-//                }
-//                else{
-//                    MoveForward();
-//                }
-//            }
+        }
+        else if(mode==0x40){
+            //语音控制模式
+            if(running_statu==0x11){
+                MoveForward();
+                Delay_ms(500);
+                Car_Stop();
+            }            
+            else if(running_statu==0x12){
+                MoveBackward();
+                Delay_ms(500);
+                Car_Stop();
+            }      
+            else if(running_statu==0x13){
+                Turn_Right();
+                Delay_ms(300);
+                Car_Stop();
+            }      
+            else if(running_statu==0x14){
+                Turn_Left();
+                Delay_ms(300);
+                Car_Stop();
+            }      
+            else if(running_statu==0x15){
+                Self_Right();
+                Delay_ms(500);
+                Car_Stop();
+            }      
+            else if(running_statu==0x16){
+                Self_Left();
+                Delay_ms(500);
+                Car_Stop();
+            }      
+            else if(running_statu==0x17){
+                Car_Stop();
+            }
+            else if(running_statu==0x18){
+                Turn_Left();
+            }
+            else if(running_statu==0x19){
+                Servo_SetAngle(0);
+            }
+            else if(running_statu==0x41){
+                Servo_SetAngle(90);
+            }
+            else if(running_statu==0x42){
+                Car_Stop();
+            }
             
-
-
+            running_statu=0x17;
+            mode=0x10;
             
         }
         //手动模式
@@ -233,38 +267,49 @@ void USART3_IRQHandler(void){
         0x17--立正
         */
         else if(Data==0x11){
-            MoveForward();
-            Delay_ms(500);
-            Car_Stop();
-        }            
+            mode=0x40;
+            running_statu=0x11;     
+        }
         else if(Data==0x12){
-            MoveBackward();
-            Delay_ms(500);
-            Car_Stop();
-        }      
+            mode=0x40;
+            running_statu=0x12;
+        }
         else if(Data==0x13){
-            Turn_Right();
-            Delay_ms(300);
-            Car_Stop();
-        }      
+            mode=0x40;
+            running_statu=0x13;
+        }
         else if(Data==0x14){
-            Turn_Left();
-            Delay_ms(300);
-            Car_Stop();
-        }      
+            mode=0x40;
+            running_statu=0x14;
+        }
         else if(Data==0x15){
-            Self_Right();
-            Delay_ms(500);
-            Car_Stop();
-        }      
+            mode=0x40;
+            running_statu=0x15;
+        }
         else if(Data==0x16){
-            Self_Left();
-            Delay_ms(500);
-            Car_Stop();
-        }      
-        else if(Data==0x17){
-            Car_Stop();
-        }      
+            mode=0x40;
+            running_statu=0x16;
+        }
+        else if(Data==0x17){ 
+            mode=0x40;
+            running_statu=0x17;  
+        }
+        else if(Data==0x18){ 
+            mode=0x40;
+            running_statu=0x18;  
+        }
+        else if(Data==0x19){ 
+            mode=0x40;
+            running_statu=0x19;  
+        }
+        else if(Data==0x41){ 
+            mode=0x40;
+            running_statu=0x41;  
+        }
+        else if(Data==0x42){ 
+            mode=0x40;
+            running_statu=0x42;  
+        }
         else if(Data==0x20) mode=0x20;              //超声波避障
         else if(Data==0x30) mode=0x30;              //循迹模式
 	}
